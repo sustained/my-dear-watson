@@ -18,7 +18,7 @@
 import { degreesToRadians } from "../utilities/math";
 
 /*
-	TODO:
+  TODO:
     - Add concept of spacing/padding.
     - Icons.
     - Figure out how to animate/transition this stuff.
@@ -54,8 +54,8 @@ export default {
   },
   
   created() {
-  	this.segments = new Array(this.numSegments)
-    	.fill()
+    this.segments = new Array(this.numSegments)
+      .fill()
       .map((_, i) => this.computeSegmentPath(i));
   },
   
@@ -65,19 +65,19 @@ export default {
     },
     
     segmentSizeDegrees() {
-			return 360 / this.numSegments;
-		}
+      return 360 / this.numSegments;
+    }
   },
 
   methods: {
     computeSegmentPath(i) {
-    	const { radius, diameter, numSegments } = this;
+      const { radius, diameter, numSegments } = this;
       
       const angle = this.segmentSizeDegrees * (i + 1);
       const arcTo = degreesToRadians(this.segmentSizeDegrees);
       
-    	const path = ([
-      	`M${radius},${radius}`,
+      const path = ([
+        `M${radius},${radius}`,
         `l${radius},0`,
         `A${radius},${radius} 0 0,0 ${arcTo[0]},${arcTo[1]}`,
         `z`
