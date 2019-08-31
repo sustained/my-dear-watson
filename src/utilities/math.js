@@ -13,7 +13,7 @@ export function radiansToDegrees(angle) {
 }
 
 /*
-  Convert a polar coordinate (r, θ) to cartersian (x, y).
+  Convert a polar coordinate (r, θ) to cartesian (x, y).
 */
 export function polarToCartesian(radius, theta) {
   const x = radius + radius * Math.cos(theta);
